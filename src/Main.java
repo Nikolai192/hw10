@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class Main
 {
     public static void main(String[] args) {
-    yearLeap(1800);
+    yearLeap(1804);
     mobilApplication(0, 2024);
     cardDelivery(25);
     }
@@ -12,14 +12,14 @@ public class Main
         if ( year < 1584) {
             System.out.println("Високосный год не введен");
         } else if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            System.out.println( + year + " год високосный");
+            System.out.println(year + " год високосный");
         } else {
-            System.out.println( + year + " год не високосный");
+            System.out.println(year + " год не високосный");
         }
     }
     public static void mobilApplication(int clientPhoneOS, int clientDeviceYear) {
         int currentYear = LocalDate.now().getYear();
-        if ( clientPhoneOS == 1 && clientDeviceYear <= currentYear ) {
+        if ( clientPhoneOS == 1 && clientDeviceYear < currentYear ) {
             System.out.println("Скачай облегченную версию приложения для Android по ссылке");
         } else if (clientPhoneOS == 1 && clientDeviceYear > currentYear) {
             System.out.println("Установите версию приложения для Android по ссылке");
